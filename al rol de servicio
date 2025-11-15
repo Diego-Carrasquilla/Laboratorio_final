@@ -1,0 +1,21 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "aws-elasticbeanstalk-service-role",
+        "RoleId": "AROAYFKGDOQOKQN6QHNCV",
+        "Arn": "arn:aws:iam::561177130012:role/aws-elasticbeanstalk-service-role",
+        "CreateDate": "2025-11-15T15:22:27+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "elasticbeanstalk.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}

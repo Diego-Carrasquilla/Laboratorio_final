@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini RPG - Aventura Épica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pantalla de inicio -->
+        <div id="start-screen" class="screen active">
+            <div class="title-container">
+                <h1 class="game-title">⚔️ MINI RPG ⚔️</h1>
+                <p class="subtitle">Una Aventura Épica te Espera</p>
+            </div>
+            <div class="start-form">
+                <input type="text" id="player-name" placeholder="Ingresa tu nombre de héroe" maxlength="20">
+                <button id="start-btn" class="btn btn-primary">🚀 Comenzar Aventura</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de exploración -->
+        <div id="exploration-screen" class="screen">
+            <header class="game-header">
+                <div class="player-info">
+                    <h2 id="player-name-display">Héroe</h2>
+                    <div class="stats">
+                        <div class="stat">
+                            <span>Nivel:</span>
+                            <span id="player-level">1</span>
+                        </div>
+                        <div class="stat">
+                            <span>⚡ HP:</span>
+                            <span id="player-hp">100</span>/<span id="player-max-hp">100</span>
+                        </div>
+                        <div class="stat">
+                            <span>💰 Oro:</span>
+                            <span id="player-gold">50</span>
+                        </div>
+                        <div class="stat">
+                            <span>✨ EXP:</span>
+                            <span id="player-exp">0</span>/<span id="player-exp-next">100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-actions">
+                    <button id="heal-btn" class="btn btn-secondary">🏥 Curar (20 oro)</button>
+                    <button id="buy-potion-btn" class="btn btn-secondary">🧪 Comprar Poción (30 oro)</button>
+                </div>
+            </header>
+
+            <main class="exploration-main">
+                <h3>🌍 Zona de Exploración</h3>
+                <p>Elige un enemigo para combatir:</p>
+                <div class="monsters-grid" id="monsters-grid">
+                    <!-- Los monstruos se llenarán dinámicamente -->
+                </div>
+            </main>
+
+            <div class="inventory">
+                <h4>🎒 Inventario:</h4>
+                <div id="inventory-items" class="inventory-items">
+                    <!-- Items se llenarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de combate -->
+        <div id="battle-screen" class="screen">
+            <div class="battle-container">
+                <h3 class="battle-title">⚔️ Combate</h3>
+                
+                <div class="battle-info">
+                    <div class="combatant player-combatant">
+                        <h4 id="battle-player-name">Héroe</h4>
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="player-hp-bar"></div>
+                            <span class="hp-text" id="battle-player-hp">100/100</span>
+                        </div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="combatant monster-combatant">
+                        <h4 id="battle-monster-name">Enemigo</h4>
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="monster-hp-bar"></div>
+                            <span class="hp-text" id="battle-monster-hp">50/50</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="battle-actions">
+                    <div class="attack-options">
+                        <button id="attack-normal-btn" class="btn btn-primary">⚔️ Ataque Normal</button>
+                        <button id="attack-heavy-btn" class="btn btn-danger">💥 Ataque Poderoso</button>
+                        <button id="attack-quick-btn" class="btn btn-info">⚡ Ataque Rápido</button>
+                    </div>
+                    <div class="other-actions">
+                        <button id="heal-battle-btn" class="btn btn-success">🧪 Usar Poción</button>
+                        <button id="flee-btn" class="btn btn-warning">🏃 Huir</button>
+                    </div>
+                </div>
+                
+                <div class="battle-log" id="battle-log">
+                    <h4>📜 Registro de Combate:</h4>
+                    <div class="log-content" id="log-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de game over -->
+        <div id="game-over-screen" class="screen">
+            <div class="game-over-content">
+                <h2 id="game-over-title">🏆 ¡Victoria!</h2>
+                <p id="game-over-message">Has completado tu aventura</p>
+                <button id="restart-btn" class="btn btn-primary">🔄 Nueva Aventura</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notifications" class="notifications"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>

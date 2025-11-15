@@ -1,0 +1,12 @@
+# Ignorar archivos y directorios innecesarios para Docker
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.nyc_output
+coverage
+.cache
+.aws
+*.log
